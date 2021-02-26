@@ -84,7 +84,7 @@
         </mets:mets>
     </xsl:template>
 
-    <xsl:template match="mods:*">
+    <xsl:template match="mods:*[local-name(.) != 'mods']">
         <xsl:copy-of select="."/>
     </xsl:template>
 
