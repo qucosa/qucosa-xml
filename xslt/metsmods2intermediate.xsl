@@ -30,8 +30,10 @@
             <xsl:apply-templates select="mets:metsHdr"/>
             <xsl:apply-templates
                     select="mets:amdSec/mets:techMD/mets:mdWrap[@MDTYPE='OTHER'][@OTHERMDTYPE='SLUBINFO'][@MIMETYPE='application/vnd.slub-info+xml']/mets:xmlData/slub:info"/>
-            <xsl:apply-templates
-                    select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods"/>
+            <mods:mods>
+                <xsl:apply-templates
+                        select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods"/>
+            </mods:mods>
             <xsl:apply-templates select="mets:fileSec"/>
         </data>
     </xsl:template>
