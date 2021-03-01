@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<data xmlns:mods="http://www.loc.gov/mods/v3">
+    <mods:mods>
+        <mods:titleInfo>
+            <mods:title>Test 7</mods:title>
+        </mods:titleInfo>
+    </mods:mods>
+    <mods:mods>
+        <mods:name type="personal">
+            <mods:namePart type="family">Mustermann</mods:namePart>
+            <mods:role>
+                <mods:roleTerm type="code">aut</mods:roleTerm>
+            </mods:role>
+        </mods:name>
+    </mods:mods>
+    <type>simple</type>
+    <distribution>2021-02-25T14:05:30+0000</distribution>
+    <creationDate>2021-02-25T13:56:24.528+00:00</creationDate>
+    <file>
+        <href>http://ddev-kitodo-publication.ddev.site/uploads/tx_dpf/16142613846037ac887c8556.81202327</href>
+        <mimetype>application/pdf</mimetype>
+        <title>Volltext (PDF)</title>
+        <download>1</download>
+        <archive/>
+        <use/>
+        <id>ATT-0</id>
+        <hasFLocat>1</hasFLocat>
+    </file>
+</data>
