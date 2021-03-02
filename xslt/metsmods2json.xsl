@@ -12,10 +12,10 @@
         <text>{</text>
 
         <apply-templates
-                select="mets:dmdSec/mets:mdWrap[@MDTYPE=&apos;MODS&apos;][1]/mets:xmlData/mods:mods"/>
+                select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS'][1]/mets:xmlData/mods:mods"/>
 
         <apply-templates
-                select="mets:amdSec/mets:techMD/mets:mdWrap[@OTHERMDTYPE=&apos;SLUBINFO&apos;][1]/mets:xmlData/slub:info"/>
+                select="mets:amdSec/mets:techMD/mets:mdWrap[@OTHERMDTYPE='SLUBINFO'][1]/mets:xmlData/slub:info"/>
         <text>}</text>
     </template>
     <template match="mods:mods">
@@ -103,7 +103,7 @@
     </template>
     <template name="title">
         <param name="modsElement"/>
-        <text>&quot;title&quot;:[</text>
+        <text>"title":[</text>
         <for-each select="$modsElement/mods:titleInfo/mods:title">
             <call-template name="quote">
                 <with-param name="s" select="."/>
@@ -116,16 +116,16 @@
     </template>
     <template name="issue">
         <param name="modsElement"/>
-        <text>&quot;issue&quot;:</text>
+        <text>"issue":</text>
         <call-template name="quote">
             <with-param name="s"
-                        select="$modsElement/mods:part[@type=&apos;issue&apos;]/mods:detail/mods:number"/>
+                        select="$modsElement/mods:part[@type='issue']/mods:detail/mods:number"/>
         </call-template>
     </template>
     <template name="abstract">
         <param name="modsElement"/>
-        <text>&quot;abstract&quot;:[</text>
-        <for-each select="$modsElement/mods:abstract[@type=&apos;summary&apos;]">
+        <text>"abstract":[</text>
+        <for-each select="$modsElement/mods:abstract[@type='summary']">
             <call-template name="quote">
                 <with-param name="s" select="."/>
             </call-template>
@@ -137,12 +137,12 @@
     </template>
     <template name="author">
         <param name="modsElement"/>
-        <text>&quot;author&quot;:[</text>
+        <text>"author":[</text>
         <for-each
-                select="$modsElement/mods:name[@type=&apos;personal&apos; and mods:role/mods:roleTerm=&apos;aut&apos;]">
+                select="$modsElement/mods:name[@type='personal' and mods:role/mods:roleTerm='aut']">
             <call-template name="quote">
                 <with-param name="s"
-                            select="concat(mods:namePart[@type=&apos;given&apos;], &apos; &apos;, mods:namePart[@type=&apos;family&apos;])"/>
+                            select="concat(mods:namePart[@type='given'], ' ', mods:namePart[@type='family'])"/>
             </call-template>
             <choose>
                 <when test="position() != last()">,</when>
@@ -152,11 +152,11 @@
     </template>
     <template name="persons">
         <param name="modsElement"/>
-        <text>&quot;persons&quot;:[</text>
-        <for-each select="$modsElement/mods:name[@type=&apos;personal&apos;]">
+        <text>"persons":[</text>
+        <for-each select="$modsElement/mods:name[@type='personal']">
             <call-template name="quote">
                 <with-param name="s"
-                            select="concat(mods:namePart[@type=&apos;given&apos;], &apos; &apos;, mods:namePart[@type=&apos;family&apos;])"/>
+                            select="concat(mods:namePart[@type='given'], ' ', mods:namePart[@type='family'])"/>
             </call-template>
             <choose>
                 <when test="position() != last()">,</when>
@@ -166,7 +166,7 @@
     </template>
     <template name="language">
         <param name="modsElement"/>
-        <text>&quot;language&quot;:[</text>
+        <text>"language":[</text>
         <for-each select="$modsElement/mods:language/mods:languageTerm">
             <call-template name="quote">
                 <with-param name="s" select="."/>
@@ -179,8 +179,8 @@
     </template>
     <template name="publisher">
         <param name="modsElement"/>
-        <text>&quot;publisher&quot;:[</text>
-        <for-each select="$modsElement/mods:relatedItem[@type=&apos;original&apos;]">
+        <text>"publisher":[</text>
+        <for-each select="$modsElement/mods:relatedItem[@type='original']">
             <call-template name="quote">
                 <with-param name="s" select="mods:originInfo/mods:publisher"/>
             </call-template>
@@ -192,10 +192,10 @@
     </template>
     <template name="publisher_place">
         <param name="modsElement"/>
-        <text>&quot;publisher_place&quot;:[</text>
-        <for-each select="$modsElement/mods:originInfo[@eventType=&apos;publication&apos;]">
+        <text>"publisher_place":[</text>
+        <for-each select="$modsElement/mods:originInfo[@eventType='publication']">
             <call-template name="quote">
-                <with-param name="s" select="mods:place/mods:placeTerm[@type=&apos;text&apos;]"/>
+                <with-param name="s" select="mods:place/mods:placeTerm[@type='text']"/>
             </call-template>
             <choose>
                 <when test="position() != last()">,</when>
@@ -205,8 +205,8 @@
     </template>
     <template name="distributor">
         <param name="modsElement"/>
-        <text>&quot;distributor&quot;:[</text>
-        <for-each select="$modsElement/mods:originInfo[@eventType=&apos;distribution&apos;]">
+        <text>"distributor":[</text>
+        <for-each select="$modsElement/mods:originInfo[@eventType='distribution']">
             <call-template name="quote">
                 <with-param name="s" select="mods:publisher"/>
             </call-template>
@@ -218,10 +218,10 @@
     </template>
     <template name="distributor_place">
         <param name="modsElement"/>
-        <text>&quot;distributor_place&quot;:[</text>
-        <for-each select="$modsElement/mods:originInfo[@eventType=&apos;distribution&apos;]">
+        <text>"distributor_place":[</text>
+        <for-each select="$modsElement/mods:originInfo[@eventType='distribution']">
             <call-template name="quote">
-                <with-param name="s" select="mods:place/mods:placeTerm[@type=&apos;text&apos;]"/>
+                <with-param name="s" select="mods:place/mods:placeTerm[@type='text']"/>
             </call-template>
             <choose>
                 <when test="position() != last()">,</when>
@@ -231,10 +231,10 @@
     </template>
     <template name="distribution_date">
         <param name="modsElement"/>
-        <text>&quot;distribution_date&quot;:[</text>
-        <for-each select="$modsElement/mods:originInfo[@eventType=&apos;distribution&apos;]">
+        <text>"distribution_date":[</text>
+        <for-each select="$modsElement/mods:originInfo[@eventType='distribution']">
             <call-template name="quote">
-                <with-param name="s" select="mods:dateIssued[@keyDate=&apos;yes&apos;]"/>
+                <with-param name="s" select="mods:dateIssued[@keyDate='yes']"/>
             </call-template>
             <choose>
                 <when test="position() != last()">,</when>
@@ -244,8 +244,8 @@
     </template>
     <template name="classification">
         <param name="modsElement"/>
-        <text>&quot;classification&quot;:[</text>
-        <for-each select="$modsElement/mods:classification[@authority and @authority!=&apos;z&apos;]">
+        <text>"classification":[</text>
+        <for-each select="$modsElement/mods:classification[@authority and @authority!='z']">
             <call-template name="quote">
                 <with-param name="s" select="."/>
             </call-template>
@@ -257,8 +257,8 @@
     </template>
     <template name="tag">
         <param name="modsElement"/>
-        <text>&quot;tag&quot;:[</text>
-        <for-each select="$modsElement/mods:classification[not(@authority) or @authority=&apos;z&apos;]">
+        <text>"tag":[</text>
+        <for-each select="$modsElement/mods:classification[not(@authority) or @authority='z']">
             <call-template name="quote">
                 <with-param name="s" select="."/>
             </call-template>
@@ -270,7 +270,7 @@
     </template>
     <template name="identifier">
         <param name="modsElement"/>
-        <text>&quot;identifier&quot;:[</text>
+        <text>"identifier":[</text>
         <for-each select="$modsElement/mods:identifier">
             <call-template name="quote">
                 <with-param name="s" select="."/>
@@ -283,9 +283,9 @@
     </template>
     <template name="corporation">
         <param name="modsElement"/>
-        <text>&quot;corporation&quot;:[</text>
+        <text>"corporation":[</text>
         <for-each
-                select="$modsElement/mods:name[@type=&apos;corporate&apos;]/mods:namePart | $modsElement/mods:extension/slub:info/slub:corporation/*">
+                select="$modsElement/mods:name[@type='corporate']/mods:namePart | $modsElement/mods:extension/slub:info/slub:corporation/*">
             <call-template name="quote">
                 <with-param name="s" select="."/>
             </call-template>
@@ -297,28 +297,28 @@
     </template>
     <template name="submitter">
         <param name="slubElement"/>
-        <text>&quot;submitter&quot;:</text>
+        <text>"submitter":</text>
         <call-template name="quote">
             <with-param name="s" select="$slubElement/slub:submitter/foaf:Person/foaf:name"/>
         </call-template>
     </template>
     <template name="project">
         <param name="slubElement"/>
-        <text>&quot;project&quot;:</text>
+        <text>"project":</text>
         <call-template name="quote">
             <with-param name="s" select="$slubElement/slub:project"/>
         </call-template>
     </template>
     <template name="doctype">
         <param name="slubElement"/>
-        <text>&quot;doctype&quot;:</text>
+        <text>"doctype":</text>
         <call-template name="quote">
             <with-param name="s" select="$slubElement/slub:documentType"/>
         </call-template>
     </template>
     <template name="collections">
         <param name="slubElement"/>
-        <text>&quot;collections&quot;:[</text>
+        <text>"collections":[</text>
         <for-each select="$slubElement/slub:collections/slub:collection">
             <call-template name="quote">
                 <with-param name="s" select="."/>
@@ -331,7 +331,7 @@
     </template>
     <template name="processNumber">
         <param name="slubElement"/>
-        <text>&quot;process_number&quot;:</text>
+        <text>"process_number":</text>
         <call-template name="quote">
             <with-param name="s" select="$slubElement/slub:processNumber"/>
         </call-template>
@@ -341,8 +341,8 @@
 
     <template name="quote">
         <param name="s"/>
-        <text>&quot;</text>
-        <value-of select="translate(normalize-space($s), &apos;&quot;\&apos;, &apos;&apos;)"/>
-        <text>&quot;</text>
+        <text>"</text>
+        <value-of select="translate(normalize-space($s), '&quot;', '')"/>
+        <text>"</text>
     </template>
 </stylesheet>
