@@ -28,6 +28,7 @@
         <data>
             <xsl:copy-of select="@xsi:schemaLocation"/>
             <xsl:apply-templates select="mets:metsHdr"/>
+            <xsl:apply-templates select="mets:structMap[@TYPE='LOGICAL']"/>
             <xsl:apply-templates
                     select="mets:amdSec/mets:techMD/mets:mdWrap[@MDTYPE='OTHER'][@OTHERMDTYPE='SLUBINFO'][@MIMETYPE='application/vnd.slub-info+xml']/mets:xmlData/slub:info"/>
             <mods:mods>
@@ -45,6 +46,15 @@
         <owner>
             <xsl:value-of select="mets:agent[@ROLE='EDITOR'][@TYPE='ORGANIZATION']/mets:name"/>
         </owner>
+        <creationDate>
+            <xsl:value-of select="@CREATEDATE"/>
+        </creationDate>
+    </xsl:template>
+
+    <xsl:template match="mets:structMap[@TYPE='LOGICAL']">
+        <type>
+            <xsl:value-of select="mets:div/@TYPE"/>
+        </type>
     </xsl:template>
 
     <xsl:template match="mets:fileSec">
@@ -65,13 +75,9 @@
                 <archive>
                     <xsl:if test="@USE='ARCHIVE'">1</xsl:if>
                 </archive>
-                <use>
-                    <xsl:value-of select="@USE"/>
-                </use>
                 <id>
                     <xsl:value-of select="@ID"/>
                 </id>
-                <hasFLocat>1</hasFLocat>
             </file>
         </xsl:for-each>
     </xsl:template>
