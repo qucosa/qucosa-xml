@@ -12,6 +12,18 @@
                 <mods:roleTerm type="code">aut</mods:roleTerm>
             </mods:role>
         </mods:name>
+        <mods:name type="corporate">
+            <mods:namePart>Viech &amp; Flachmann</mods:namePart>
+            <mods:role>
+                <mods:roleTerm type="code">pbl</mods:roleTerm>
+            </mods:role>
+        </mods:name>
+        <mods:name type="corporate">
+            <mods:namePart>Beckmann</mods:namePart>
+            <mods:role>
+                <mods:roleTerm type="code">pbl</mods:roleTerm>
+            </mods:role>
+        </mods:name>
     </mods:mods>
     <type>simple</type>
     <distribution>2021-02-25T14:05:30+0000</distribution>
