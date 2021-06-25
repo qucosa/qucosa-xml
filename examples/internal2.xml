@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<data xmlns:mods="http://www.loc.gov/mods/v3">
+    <mods:mods>
+        <mods:titleInfo>
+            <mods:title>File Test 2</mods:title>
+        </mods:titleInfo>
+    </mods:mods>
+    <file use="primary">
+        <href>ddev-ddev-kitodo-publication-typo3-9-web/uploads/tx_dpf/162391304660caf256a4a962.08304575</href>
+        <id>162391304660caf256a51a14.36337050</id>
+        <mimetype>application/pdf</mimetype>
+        <title>PDF Sample</title>
+        <downloadable>yes</downloadable>
+        <archivalValue>yes</archivalValue>
+    </file>
+    <file>
+        <href>ddev-ddev-kitodo-publication-typo3-9-web/uploads/tx_dpf/162391304660caf256a6b782.96694903</href>
+        <id>162391304660caf256a6df60.21147526</id>
+        <mimetype>application/pdf</mimetype>
+        <title>PDF Sample 3</title>
+        <downloadable>yes</downloadable>
+        <archivalValue>yes</archivalValue>
+    </file>
+    <type>simple</type>
+    <processNumber>FEDORAADMIN-21-46</processNumber>
+</data>
